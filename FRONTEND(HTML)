@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VirtuWell - AI Healthcare</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Welcome to VirtuWell</h1>
+    <p>Enter your health data to generate an AI-based health prediction.</p>
+
+    <form id="healthForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required><br>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" required><br>
+
+        <label for="symptoms">Symptoms:</label>
+        <textarea id="symptoms" required></textarea><br>
+
+        <button type="submit">Generate Digital Twin</button>
+    </form>
+
+    <h2>Health Prediction Outcome</h2>
+    <div id="result"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
