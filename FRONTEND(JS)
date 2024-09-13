@@ -1,0 +1,39 @@
+document.addEventListener('DOMContentLoaded', () => {
+    // Toggle navigation between pages
+    const pages = document.querySelectorAll('.page');
+    const links = document.querySelectorAll('.navbar ul li a');
+
+    links.forEach(link => {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            
+            // Hide all pages and remove active link class
+            pages.forEach(page => page.classList.remove('active'));
+            links.forEach(link => link.classList.remove('active'));
+
+            // Show the clicked page
+            const pageId = this.textContent.toLowerCase().replace(" ", "");
+            document.getElementById(pageId).classList.add('active');
+            this.classList.add('active');
+        });
+    });
+
+    // Form submission (Simulate health report generation)
+    const healthForm = document.getElementById('healthForm');
+    healthForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const age = document.getElementById('age').value;
+        const symptoms = document.getElementById('symptoms').value;
+        alert(`Age: ${age}\nSymptoms: ${symptoms}\n\nHealth Report Generated!`);
+    });
+
+    // Simulate Digital Twin condition
+    const simulateBtn = document.getElementById('simulateBtn');
+    const conditionElement = document.getElementById('condition');
+    simulateBtn.addEventListener('click', () => {
+        conditionElement.textContent = "Simulating condition...";
+        setTimeout(() => {
+            conditionElement.textContent = "Diabetes (Simulated)";
+        }, 2000);
+    });
+});
