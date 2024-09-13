@@ -1,0 +1,23 @@
+{
+  "_id": ObjectId("unique_user_id"),
+  "username": "john_doe",
+  "email": "john@example.com",
+  "passwordHash": "hashed_password",
+  "profile": {
+    "firstName": "John",
+    "lastName": "Doe",
+    "dob": "1985-05-15",
+    "gender": "Male"
+  },
+  "contactInfo": {
+    "phone": "+1234567890",
+    "address": "123 Main St, Anytown, USA"
+  },
+  "medicalHistory": [
+    {
+      "condition": "Hypertension",
+      "diagnosedDate": "2020-01-10",
+      "notes": "Managed with medication"
+    }
+  ]
+}
