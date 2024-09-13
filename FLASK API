@@ -1,0 +1,22 @@
+document.getElementById('simulateBtn').addEventListener('click', () => {
+    const age = document.getElementById('age').value;
+    const symptoms = document.getElementById('symptoms').value;
+
+    // Send the input data to Flask backend via POST request
+    fetch('http://127.0.0.1:5000/health-bot', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            age: age,
+            symptoms: symptoms
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        // Display the predicted condition in the "condition" element
+        document.getElementById('condition').textContent = `Predicted Condition: ${data.predicted_condition}`;
+    })
+    .catch(error => console.error('Error:', error));
+});
