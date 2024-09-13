@@ -1,0 +1,11 @@
+{
+  "_id": ObjectId("unique_record_id"),
+  "userId": ObjectId("unique_user_id"),
+  "recordDate": "2024-09-12",
+  "recordType": "Lab Result",
+  "details": {
+    "test": "Blood Pressure",
+    "result": "120/80 mmHg",
+    "notes": "Normal"
+  }
+}
