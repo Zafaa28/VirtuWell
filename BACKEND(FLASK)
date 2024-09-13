@@ -1,0 +1,35 @@
+from flask import Flask, request, jsonify
+
+app = Flask(__name__)
+
+# Simple health prediction logic for demo
+def predict_health(age, symptoms):
+    if age >= 50 and 'fatigue' in symptoms:
+        return 'Diabetes (High Risk)'
+    elif age >= 30 and 'headache' in symptoms:
+        return 'Hypertension (Medium Risk)'
+    else:
+        return 'Healthy (Low Risk)'
+
+@app.route('/health-bot', methods=['POST'])
+def health_bot():
+    try:
+        # Get age and symptoms from request
+        data = request.json
+        age = int(data.get('age', 0))
+        symptoms = data.get('symptoms', '').lower()
+
+        # Predict health condition
+        prediction = predict_health(age, symptoms)
+
+        # Return prediction in JSON response
+        return jsonify({
+            'age': age,
+            'symptoms': symptoms,
+            'predicted_condition': prediction
+        }), 200
+    except Exception as e:
+        return jsonify({'error': str(e)}), 400
+
+if __name__ == '__main__':
+    app.run(debug=True)
