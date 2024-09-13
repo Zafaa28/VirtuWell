@@ -1,0 +1,9 @@
+{
+  "_id": ObjectId("unique_appointment_id"),
+  "userId": ObjectId("unique_user_id"),
+  "doctorId": ObjectId("unique_doctor_id"),
+  "appointmentDate": "2024-10-01T14:00:00Z",
+  "reason": "Routine Checkup",
+  "status": "Scheduled",
+  "notes": "Initial consultation"
+}
