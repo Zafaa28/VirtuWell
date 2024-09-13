@@ -1,0 +1,63 @@
+use virtuWell
+
+db.users.insertOne({
+  "username": "john_doe",
+  "email": "john@example.com",
+  "passwordHash": "hashed_password",
+  "profile": {
+    "firstName": "John",
+    "lastName": "Doe",
+    "dob": "1985-05-15",
+    "gender": "Male"
+  },
+  "contactInfo": {
+    "phone": "+1234567890",
+    "address": "123 Main St, Anytown, USA"
+  },
+  "medicalHistory": [
+    {
+      "condition": "Hypertension",
+      "diagnosedDate": "2020-01-10",
+      "notes": "Managed with medication"
+    }
+  ]
+})
+
+db.appointments.insertOne({
+  "userId": ObjectId("unique_user_id"),
+  "doctorId": ObjectId("unique_doctor_id"),
+  "appointmentDate": "2024-10-01T14:00:00Z",
+  "reason": "Routine Checkup",
+  "status": "Scheduled",
+  "notes": "Initial consultation"
+})
+
+db.medicalRecords.insertOne({
+  "userId": ObjectId("unique_user_id"),
+  "recordDate": "2024-09-12",
+  "recordType": "Lab Result",
+  "details": {
+    "test": "Blood Pressure",
+    "result": "120/80 mmHg",
+    "notes": "Normal"
+  }
+})
+
+db.digitalTwins.insertOne({
+  "userId": ObjectId("unique_user_id"),
+  "virtualModel": {
+    "height": "180 cm",
+    "weight": "75 kg",
+    "bodyMetrics": {
+      "BMI": 23.1,
+      "bodyFatPercentage": 18
+    }
+  },
+  "healthForecast": {
+    "riskLevel": "Low",
+    "recommendations": [
+      "Regular exercise",
+      "Balanced diet"
+    ]
+  }
+})
