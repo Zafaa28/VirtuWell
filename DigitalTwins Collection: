@@ -1,0 +1,19 @@
+{
+  "_id": ObjectId("unique_digital_twin_id"),
+  "userId": ObjectId("unique_user_id"),
+  "virtualModel": {
+    "height": "180 cm",
+    "weight": "75 kg",
+    "bodyMetrics": {
+      "BMI": 23.1,
+      "bodyFatPercentage": 18
+    }
+  },
+  "healthForecast": {
+    "riskLevel": "Low",
+    "recommendations": [
+      "Regular exercise",
+      "Balanced diet"
+    ]
+  }
+}
